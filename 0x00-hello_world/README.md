@@ -1,1 +1,1 @@
-*A walk through on the basics of c programming.*
+*This various tasks leading to c and involving programming language*
