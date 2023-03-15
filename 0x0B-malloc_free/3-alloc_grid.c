@@ -9,39 +9,40 @@
   * Return: pointer to 2 dim. array
   */
 
+
 int **alloc_grid(int width, int height)
 {
-	int i, j, k, l;
-	int **b;
+	int **mee;
+	int x, y;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	b = malloc(sizeof(int *) * height);
+	mee = malloc(sizeof(int *) * height);
 
-	if (b == NULL)
-	{
-		free(b);
+	if (mee == NULL)
 		return (NULL);
-	}
 
-	for (i = 0; i < height; i++)
+	for (x = 0; x < height; x++)
 	{
-		b[i] = malloc(sizeof(int) * width);
+		mee[x] = malloc(sizeof(int) * width);
 
-		if (b[i] == NULL)
-			for (j = i; j >= 0; j--)
-			{
-				free(b[j]);
-				return (NULL);
-			}
-	}
-	for (k = 0; k < height; k++)
-	{
-		for (l = 0; l < width; l++)
+		if (mee[x] == NULL)
 		{
-			b[k][l] = 0;
+			for (; x >= 0; x--)
+				free(mee[x]);
+
+			free(mee);
+			return (NULL);
 		}
 	}
-	return (b);
+
+	for (x = 0; x < height; x++)
+	{
+		for (y = 0; y < width; y++)
+			mee[x][y] = 0;
+	}
+
+	return (mee);
 }
+
