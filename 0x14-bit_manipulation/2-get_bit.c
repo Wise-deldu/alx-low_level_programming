@@ -3,7 +3,7 @@
 /**
  * get_bit - A program that returns the value of a bit at an index
  * in a decimal number
-
+ *
  * @n: number to search
  * @index: index of the bit
  *
