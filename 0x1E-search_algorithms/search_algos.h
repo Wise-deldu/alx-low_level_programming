@@ -1,5 +1,5 @@
-#ifndef _SORTING_ALGOS_H_
-#define _SORTING_ALGOS_H_
+#ifndef SORTING_ALGOS_H_
+#define SORTING_ALGOS_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,7 +20,7 @@ typedef struct listint_s
 	int n;
 	size_t index;
 	struct listint_s *next;
-} listint_t
+} listint_t;
 
 /**
  * struct skiplist_s - Singly linked list with an express lane
